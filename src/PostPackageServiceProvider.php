@@ -16,11 +16,6 @@ class PostPackageServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        $this->loadMigrationsFrom(__DIR__.'/migrations');
-        $this->loadTranslationsFrom(__DIR__.'/translations', 'post_package');
-        $this->publishes([
-            __DIR__.'/config/post_package.php' => config_path('post.php'),
-        ]);
 
         /*Event::listen("PostPackage::Fields" , function(){
             return [
@@ -33,10 +28,16 @@ class PostPackageServiceProvider extends ServiceProvider
     public function register()
     {
         Nova::resources([Post::class]);
+        $this->loadMigrationsFrom(__DIR__ . '/migrations');
+        $this->loadTranslationsFrom(__DIR__ . '/translations', 'post_package');
 
         $this->mergeConfigFrom(
-            __DIR__.'/config/post_package.php', 'post_package'
+            __DIR__ . '/config/post_package.php', 'post_package'
         );
+
+        $this->publishes([
+            __DIR__ . '/config/post_package.php' => config_path('post.php'),
+        ]);
     }
 
 }

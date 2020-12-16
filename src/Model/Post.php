@@ -7,12 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Event;
 use Schema;
-use Spatie\MediaLibrary\HasMedia;
-use Spatie\MediaLibrary\InteractsWithMedia;
 
-class Post extends Model implements HasMedia
+class Post extends Model
 {
-    use SoftDeletes , InteractsWithMedia;
+    use SoftDeletes ;
 
     /**
      * @var mixed
