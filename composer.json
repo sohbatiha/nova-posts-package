@@ -1,0 +1,42 @@
+{
+  "name": "sohbatiha/nova-posts",
+  "description": "A powerful package to add posts resource to nova panel .",
+  "keywords": [
+    "laravel",
+    "nova",
+    "nova-package",
+    "laravel-package",
+    "PHP",
+    "posts-crud"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/sohbatiha/nova-posts-package",
+  "authors": [
+    {
+      "name": "Mahdi Sohbatiha",
+      "email": "sohbatiha2@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^7.1.3|7.2.*|7.3.*|7.4.*",
+    "laravel/nova": "*",
+    "benjaminhirsch/nova-slug-field": "^1.2",
+    "ctessier/nova-advanced-image-field": "^1.2",
+    "epartment/nova-dependency-container": "^1.2",
+    "froala/nova-froala-field": "^3.3"
+  },
+  "autoload-dev": {
+  },
+  "autoload": {
+    "psr-4": {
+      "Sohbatiha\\PostPackage\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Sohbatiha\\PostPackageServiceProvider"
+      ]
+    }
+  }
+}
